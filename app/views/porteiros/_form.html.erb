@@ -1,0 +1,33 @@
+<%= form_for(@porteiro) do |f| %>
+  <% if @porteiro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@porteiro.errors.count, "erros") %></h2>
+
+      <ul>
+      <% @porteiro.errors.full_messages.each do |message| %>
+        <li class='ls-alert-danger'><%= message%></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <label class="ls-label col-md-3">
+    <%= f.label :nome %>
+    <%= f.text_field :nome, :placeholder => 'Nome e sobrenome',:required => true%>
+  </label>
+  <label class="ls-label col-md-2">
+    <%= f.label :cpf %>
+    <%= f.text_field :cpf, :class => 'ls-mask-cpf', :placeholder => '000.000.000-00',:required => true%>
+  </label>
+  <label class="ls-label col-md-2">
+    <%= f.label :rg %>
+    <%= f.text_field :rg, :class => 'ls-mask-rg', :placeholder => '00.000.000-0',:required => true %>
+  </label>
+  <label class="ls-label col-md-2">
+    <%= f.label :telefone %>
+    <%= f.text_field :telefone, :class => 'ls-mask-phone8', :placeholder => '0000-0000',:required => true %>
+  </label>
+  <div class="ls-actions-btn">
+    <%= f.submit :Salvar, :class => 'ls-btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<main class="ls-main ">
+   <div class="container-fluid">
+   <h1 class="ls-title-intro ls-ico-search">Buscar Visitante</h1>
+   <div class="container-fluid">
+     <form  action="" class="ls-form ls-form-inline">
+       <fieldset>
+         <label class="ls-label col-md-3" role="search">
+           <input type="text" id="q" name="q" aria-label="Faça sua busca por visitante" placeholder="Nome" required="" class="ls-field">
+         </label>
+         <div class="ls-actions-btn ">
+           <input type="submit" value="Buscar" class="ls-btn" title="Buscar">
+         </div>
+       </fieldset>
+     </form>
+   </div>
+   <table class="ls-table ls-no-hover ls-table-striped ls-bg-header">
+     <thead>
+       <tr>
+         <th>Nome</th>
+         <th class="hidden-xs">CPF</th>
+         <th>RG</th>
+         <th class="hidden-xs">Telefone</th>
+         <th>Excluir</th>
+       </tr>
+     </thead>
+     <tbody>
+     <% @visitantes.each do |visitante| %>
+     <tr>
+       <td><%= link_to visitante.nome, edit_visitante_path(visitante) %></td>
+       <td><%= visitante.cpf %></td>
+       <td><%= visitante.rg %></td>
+       <td><%= visitante.telefone %></td>
+       <td><%= link_to 'Excluir', visitante, method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+</main>

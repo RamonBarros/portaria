@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visitante_id: 
+  dataEntrada: 2016-06-05 18:59:45
+  dataSaida: 2016-06-05 18:59:45
+  conjunto: 1
+  responsavel: MyString
+
+two:
+  visitante_id: 
+  dataEntrada: 2016-06-05 18:59:45
+  dataSaida: 2016-06-05 18:59:45
+  conjunto: 1
+  responsavel: MyString

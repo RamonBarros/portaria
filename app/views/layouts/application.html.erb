@@ -1,0 +1,72 @@
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taedra</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div class="ls-topbar">
+    <div class="ls-notification-topbar">
+      <div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
+        <a href="#" class="ls-ico-user">
+          <span class="ls-name">João</span>
+          (usuario)
+        </a>
+        <nav class="ls-dropdown-nav ls-user-menu">
+          <ul>
+            <li><a href="#">Meus dados</a></li>
+            <li><a href="#">Sair</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <span class="ls-show-sidebar ls-ico-menu"></span>
+    <a href="#"  class="ls-go-next"></a>
+    <h1 class="ls-brand-name">
+      <a href="home" class="ls-ico-hours">
+        <small>controle de visitantes</small>
+        TAEDRA
+      </a>
+    </h1>
+  </div>
+
+  <aside class="ls-sidebar" data-ls-module="topbarCurtain">
+    <div class="ls-sidebar-inner">
+      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
+      <nav class="ls-menu">
+        <ul>
+          <li><a href="#" class="ls-ico-dashboard" title="Dashboard">Dashboard</a></li>
+          <li>
+            <a href="/visitantes" class="ls-ico-users" title="Visitantes">Visitantes</a>
+            <ul>
+              <li><a href="/visitantes/new">Novo Visitante</a></li>
+              <li><a href="/visitantes/">Listar Visitante</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/visita/" class="ls-ico-month" title="Visitas">Visitas</a>
+            <ul>
+              <li><a href="/visita/new">Nova Visita</a></li>
+              <li><a href="/visita/">Listar Visita</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/porteiros/" class="ls-ico-home" title="Porteiros">Porteiros</a>
+            <ul>
+              <li><a href="/porteiros/new">Novo Porteiro</a></li>
+              <li><a href="/porteiros/">Listar Porteiro</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="ls-ico-stats" title="Relatórios da revenda">Relatórios</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+<%= yield %>
+
+</body>
+</html>

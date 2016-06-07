@@ -1,0 +1,40 @@
+<%= form_for(@visitum) do |f| %>
+  <% if @visitum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@visitum.errors.count, "error") %> prohibited this visitum from being saved:</h2>
+
+      <ul>
+      <% @visitum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+
+
+  <label class="ls-label col-md-2">
+    <%= f.label :visitante_id %>
+	<div class="ls-custom-select">
+	<%= f.select :visitante_id do %>
+		<%= options_from_collection_for_select(Visitante.all, :id, :nome) %>
+	<% end %>
+	</div>
+  </label>
+  <label class="ls-label col-md-5">
+    <b class="ls-label-text">Data de Entrada</b>
+    <%= f.datetime_select :dataEntrada %>
+  </label>
+  <label class="ls-label col-md-3">
+      <%= f.label :Conjunto %>
+      <%= f.text_field :conjunto, :placeholder => "Conjunto e/ou número", :required => "true" %>
+  </label>
+  <label class="ls-label col-md-3">
+    <%= f.label :Responsável %>
+    <%= f.text_field :responsavel, :placeholder => "Responsável", :required => "true" %>
+  </label>
+  </fieldset>
+  <div class="ls-actions-btn">
+    <%= f.submit :Salvar, :class => 'ls-btn' %>
+  </div>
+<% end %>
