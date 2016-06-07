@@ -14,7 +14,7 @@
     </form>
   </div>-->
   <%= form_tag(@visita_path, :method => 'get', id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Visita" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Nome" %>
     <%= submit_tag "Buscar" %> 
   <% end %>
   <table class="ls-table ls-no-hover ls-table-striped ls-bg-header">

@@ -5,6 +5,11 @@ class VisitantesController < ApplicationController
   # GET /visitantes.json
   def index
     @visitantes = Visitante.all
+    if params[:search]
+      @visitantes = Visitante.search(params[:search]).order("created_at DESC")
+    else
+      @visitante = Visitante.all.order('created_at DESC')
+    end
   end
 
   # GET /visitantes/1

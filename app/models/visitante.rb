@@ -14,12 +14,18 @@ class Visitante < ActiveRecord::Base
     	validates_numericality_of :telefone, message: "Deve ser um número"
       before_destroy :validate_visitum_existance
 
-      private
-        def validate_visitum_existance
+    private
+      def validate_visitum_existance
 
-          if !visitum.empty?
-            return false
-        end
+        if !visitum.empty?
+          return false
       end
-
+    end
+    def self.search(search)
+    if search
+      where("nome LIKE ?", "%#{(search)}%")
+    else
+      all
+    end
+  end
 end
