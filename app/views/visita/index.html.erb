@@ -27,9 +27,9 @@
     <% @visita.each do |visitum| %>
       <tr>
         <td><%= link_to visitum.visitante.nome, edit_visitum_path(visitum) %></td>
-        <td><%= visitum.dataEntrada %></td>
+        <td class="hidden-xs"><%= visitum.dataEntrada %></td>
         <td><%= visitum.dataSaida %></td>
-        <td><%= visitum.conjunto %></td>
+        <td class="hidden-xs"><%= visitum.conjunto %></td>
         <td><%= link_to 'Excluir', visitum, method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
       </tr>
     <% end %>

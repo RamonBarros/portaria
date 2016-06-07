@@ -27,9 +27,9 @@
      <% @visitantes.each do |visitante| %>
      <tr>
        <td><%= link_to visitante.nome, edit_visitante_path(visitante) %></td>
-       <td><%= visitante.cpf %></td>
+       <td class="hidden-xs"><%= visitante.cpf %></td>
        <td><%= visitante.rg %></td>
-       <td><%= visitante.telefone %></td>
+       <td class="hidden-xs"><%= visitante.telefone %></td>
        <td><%= link_to 'Excluir', visitante, method: :delete, data: { confirm: 'Confirma a exclusão?' } %></td>
       </tr>
     <% end %>

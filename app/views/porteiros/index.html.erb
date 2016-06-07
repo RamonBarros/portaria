@@ -27,9 +27,9 @@
       <% @porteiros.each do |porteiro| %>
         <tr>
           <td><%= link_to porteiro.nome, edit_porteiro_path(porteiro) %></td>
-          <td><%= porteiro.cpf %></td>
+          <td class="hidden-xs"><%= porteiro.cpf %></td>
           <td><%= porteiro.rg %></td>
-          <td><%= porteiro.telefone %></td>
+          <td class="hidden-xs"><%= porteiro.telefone %></td>
           <td><%= link_to 'Excluir', porteiro, method: :delete, data: { confirm: 'Confirma a exclusão ?' } %></td>
         </tr>
       <% end %>
