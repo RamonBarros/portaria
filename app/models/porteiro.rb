@@ -11,4 +11,12 @@ class Porteiro < ActiveRecord::Base
 	validates_uniqueness_of :rg, message: "Deve ser único"
   validates_numericality_of :cpf, message: "Deve ser um número"
 	validates_numericality_of :rg, message: "Deve ser um número"
+
+  def self.search(search)
+    if search
+      where("nome LIKE ?", "%#{(search)}%")
+    else 
+      all
+    end
+  end 
 end

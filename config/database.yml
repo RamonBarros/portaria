@@ -14,8 +14,8 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: crucio
-  host: 172.17.0.2 
+  password: 1234
+  #host: 172.17.0.2 
 
 development:
   <<: *default

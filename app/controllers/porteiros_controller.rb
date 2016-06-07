@@ -5,6 +5,11 @@ class PorteirosController < ApplicationController
   # GET /porteiros.json
   def index
     @porteiros = Porteiro.all
+    if params[:search]
+      @porteiros = Porteiro.search(params[:search]).order("created_at DESC")
+    else 
+      @porteiro = Porteiro.all.order('created_at DESC')
+    end
   end
 
   # GET /porteiros/1
