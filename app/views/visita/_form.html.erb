@@ -13,17 +13,17 @@
   <fieldset>
 
 
-  <label class="ls-label col-md-2">
+  <label class="ls-label col-md-4">
     <%= f.label :visitante_id %>
-	<div class="ls-custom-select">
-	<%= f.select :visitante_id do %>
-		<%= options_from_collection_for_select(Visitante.all, :id, :nome) %>
-	<% end %>
-	</div>
+    <div class="ls-custom-select">
+      <%= f.select :visitante_id do %>
+        <%= options_from_collection_for_select(Visitante.all, :id, :nome) %>
+  	  <% end %>
+  	</div>
   </label>
   <label class="ls-label col-md-5">
     <b class="ls-label-text">Data de Entrada</b>
-    <%= f.datetime_select :dataEntrada %>
+      <%= f.datetime_select :dataEntrada %>
   </label>
   <label class="ls-label col-md-3">
       <%= f.label :Conjunto %>
