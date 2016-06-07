@@ -5,6 +5,11 @@ class VisitaController < ApplicationController
   # GET /visita.json
   def index
     @visita = Visitum.all
+    if params[:search]
+      @visita= Visitum.search(params[:search]).order("created_at DESC")
+    else
+      @visita = Visitum.all.order('created_at DESC')
+    end
   end
 
   # GET /visita/1

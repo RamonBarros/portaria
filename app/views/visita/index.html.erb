@@ -1,6 +1,6 @@
 <main class="ls-main ">
   <div class="container-fluid">
-  <h1 class="ls-title-intro ls-ico-search">Buscar Visita</h1>
+  <!--<h1 class="ls-title-intro ls-ico-search">Buscar Visita</h1>
   <div class="container-fluid">
     <form  action="" class="ls-form ls-form-inline">
       <fieldset>
@@ -12,7 +12,11 @@
         </div>
       </fieldset>
     </form>
-  </div>
+  </div>-->
+  <%= form_tag(@visita_path, :method => 'get', id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Visita" %>
+    <%= submit_tag "Buscar" %> 
+  <% end %>
   <table class="ls-table ls-no-hover ls-table-striped ls-bg-header">
     <thead>
     <tr>
